@@ -1,0 +1,3 @@
+name: cafe-baileys-gcr-builder
+runtime: nodejs
+description: Google Container Registry for Google Cloud Platform

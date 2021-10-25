@@ -1,0 +1,24 @@
+version: "3"
+services:
+  webapp:
+    container_name: cafe_baileys_webapp
+    ports:
+      - "3000:3000"
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+  backend:
+    container_name: cafe_baileys_api
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+  db:
+    image: "postgres"
+    environment:
+      - POSTGRES_USER=barista
+      - POSTGRES_PASSWORD=b4rist4
+      - POSTGRES_DB=cafe_baileys_db
+    ports:
+      - "5432:5432"
